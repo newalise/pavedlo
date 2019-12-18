@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ catalogData?.title }}</mat-card-title>
+    <mat-card-subtitle>{{ catalogData?.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="catalogData?.image" alt="Potatoes">
+  <mat-card-content>
+    {{ catalogData?.description }}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Add to cart</button>
+  </mat-card-actions>
+</mat-card>
