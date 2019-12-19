@@ -4,6 +4,7 @@ import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule} from
 import {MaiCatalogItemComponent} from './catalog-item/catalog-item.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MaiCatalogService} from './service/catalog.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import {ReactiveFormsModule} from '@angular/forms';
   declarations: [
     MaiCatalogComponent,
     MaiCatalogItemComponent
+  ],
+  providers: [
+    MaiCatalogService
   ]
 })
 
