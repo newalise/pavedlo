@@ -8,6 +8,18 @@
     {{ catalogData?.description }}
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>Add to cart</button>
+    <div class="mai-catalog-price-group">
+      <mat-card-subtitle>Price:</mat-card-subtitle>
+      <mat-card-title>{{ (catalogData?.newPrice || catalogData?.price) + "$" }}</mat-card-title>
+    </div>
+    <div class="mai-catalog-buttons-group">
+      <button mat-button>Add to cart</button>
+      <form [formGroup]="options">
+        <mat-form-field>
+          <input matInput type="number" placeholder="Add more" value="0" formControlName="quantity" min="0">
+          <mat-error *ngIf="options.get('quantity')?.invalid">Please select more than 0</mat-error>
+        </mat-form-field>
+      </form>
+    </div>
   </mat-card-actions>
 </mat-card>
