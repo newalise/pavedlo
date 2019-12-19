@@ -3,7 +3,7 @@ export interface MaiCatalogItemModel {
   subtitle: string;
   image: string;
   description: string;
-  price: string;
-  qnty: number;
-  newPrice: number;
+  price: number;
+  qnty?: number;
+  newPrice?: number;
 }
