@@ -6,18 +6,22 @@
   </section>
 
   <section class="login-content">
-    <form class="login-form" formGroup="loginForm">
+    <form class="login-form" [formGroup]="loginForm">
       <mat-form-field>
-        <input matInput placeholder="Email">
+        <input matInput placeholder="Email" formControlName="login">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Password" type="password">
+        <input matInput placeholder="Password" type="password" formControlName="password">
       </mat-form-field>
     </form>
   </section>
 
   <section class="login-footer">
-    <button mat-button>Login</button>
+    <button mat-button [disabled]="!!((loginForm.controls['login'].dirty
+                                       || loginForm.controls['login'].touched)
+                                        && loginForm.controls['login'].errors)">
+      Login
+    </button>
   </section>
 </section>
