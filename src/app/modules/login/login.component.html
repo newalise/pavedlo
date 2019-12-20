@@ -20,7 +20,9 @@
   <section class="login-footer">
     <button mat-button [disabled]="!!((loginForm.controls['login'].dirty
                                        || loginForm.controls['login'].touched)
-                                        && loginForm.controls['login'].errors)">
+                                        && loginForm.controls['login'].errors)"
+        (click)="_login()"
+    >
       Login
     </button>
   </section>

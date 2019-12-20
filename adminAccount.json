@@ -1,0 +1,31 @@
+[
+  {
+    "type": "admin",
+    "login": "admin",
+    "firsName": "admin",
+    "lastName": "admin",
+    "password": "1234",
+    "mobilePhone": "+7111111111",
+    "email": "admin@admin.com",
+    "employees": [
+      {
+        "type": "account",
+        "login": "test1",
+        "password": "test1",
+        "firsName": "test1",
+        "lastName": "test1",
+        "mobilePhone": "+7123123123",
+        "email": "worker@worker.com"
+      },
+      {
+        "type": "account",
+        "login": "test2",
+        "password": "test2",
+        "firsName": "test2",
+        "lastName": "test2",
+        "mobilePhone": "+7321321321",
+        "email": "test2@test2.com"
+      }
+    ]
+  }
+]

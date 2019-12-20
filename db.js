@@ -1,7 +1,9 @@
-var catalog  = require('./db/catalog.json');
+var catalog  = require('./catalog.json');
+var emloyee = require('./employeesAccounts.json');
 
 module.exports = function() {
   return {
-    catalog  : catalog,
+    catalog: catalog,
+    employeesAccounts: emloyee
   }
 };

@@ -4,6 +4,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MaiCatalogService} from "../catalog/service/catalog.service";
 import {LoginComponent} from "./login.component";
+import {LoginService} from "./service/login.service";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {LoginComponent} from "./login.component";
     LoginComponent,
   ],
   providers: [
-    MaiCatalogService
+    MaiCatalogService,
+    LoginService
   ]
 })
 
