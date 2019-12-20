@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaiCatalogModule} from './modules/catalog/catalog.module';
 import {MaiHttpService} from './services/http.service';
 import {HttpClientModule} from '@angular/common/http';
+import {AppPagesModule} from "./modules/pages/pages.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MaiCatalogModule
+    MaiCatalogModule,
+    AppPagesModule
   ],
   providers: [
     MaiHttpService
