@@ -8,7 +8,7 @@
   <section class="login-content">
     <form class="login-form" [formGroup]="loginForm">
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="login">
+        <input matInput placeholder="Email" formControlName="login" [errorStateMatcher]="matcher">
       </mat-form-field>
 
       <mat-form-field>
@@ -18,9 +18,13 @@
   </section>
 
   <section class="login-footer">
-    <button mat-button [disabled]="!!((loginForm.controls['login'].dirty
+    <button mat-button [disabled]="!!(((loginForm.controls['login'].dirty
                                        || loginForm.controls['login'].touched)
-                                        && loginForm.controls['login'].errors)"
+                                        && loginForm.controls['login'].errors) &&
+                                        loginForm.controls['password'].dirty
+                                       || (loginForm.controls['password'].touched)
+                                        && loginForm.controls['password'].errors)
+                                    "
         (click)="_login()"
     >
       Login

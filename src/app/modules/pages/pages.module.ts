@@ -5,29 +5,33 @@ import {BrowserModule} from "@angular/platform-browser";
 import {LoginModule} from "../login/login.module";
 import {MaiCatalogModule} from "../catalog/catalog.module";
 import {PagesRoutingModule} from './pages-routing.module';
+import {AdminGuard} from "../../guards/admin.guard";
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 @NgModule({
-  declarations: [
-    AppPagesComponent,
-  ],
-  providers: [
-    {provide: APP_BASE_HREF, useValue: '/'},
-  ],
-  imports: [
-    BrowserModule,
-    PagesRoutingModule,
-    LoginModule,
-    MaiCatalogModule
-  ],
-  exports: [
-    AppPagesComponent
-  ],
-  bootstrap: [
-    AppPagesComponent
-  ]
+    declarations: [
+        AppPagesComponent,
+    ],
+    providers: [
+        {provide: APP_BASE_HREF, useValue: '/'},
+        AuthGuard,
+        AdminGuard
+    ],
+    imports: [
+        BrowserModule,
+        PagesRoutingModule,
+        LoginModule,
+        MaiCatalogModule
+    ],
+    exports: [
+        AppPagesComponent
+    ],
+    bootstrap: [
+        AppPagesComponent
+    ]
 })
 
 export class AppPagesModule {
-  constructor() {
-  }
+    constructor() {
+    }
 }

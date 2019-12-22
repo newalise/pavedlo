@@ -1,4 +1,5 @@
 export interface AccountModel {
+  id: string;
   firstName: string;
   lastName: string;
   type: string;
