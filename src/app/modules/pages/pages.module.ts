@@ -7,6 +7,7 @@ import {MaiCatalogModule} from "../catalog/catalog.module";
 import {PagesRoutingModule} from './pages-routing.module';
 import {AdminGuard} from "../../guards/admin.guard";
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import {CatalogManageModule} from "../catalog-manage/catalog-manage.module";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
         BrowserModule,
         PagesRoutingModule,
         LoginModule,
-        MaiCatalogModule
+        MaiCatalogModule,
+        CatalogManageModule
     ],
     exports: [
         AppPagesComponent

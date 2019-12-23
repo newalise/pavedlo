@@ -33,10 +33,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     public _login() {
+        console.log(this.loginForm.getRawValue().login, this.loginForm.getRawValue().password);
         this.loginService.login(this.loginForm.getRawValue().login, this.loginForm.getRawValue().password).subscribe((data) => {
+            console.log(data);
             if (!!data) {
-                console.log(data.type)
-                data.type === 'admin' ? this.router.navigate(['app/manage-account'])
+                console.log(data.type);
+                data.type === 'admin' ? this.router.navigate(['app/catalog-manage'])
                     : this.router.navigate(['app/catalog']);
             }
         });

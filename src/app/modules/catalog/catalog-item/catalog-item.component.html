@@ -16,7 +16,7 @@
       <button mat-button>Add to cart</button>
       <form [formGroup]="options">
         <mat-form-field>
-          <input matInput type="number" placeholder="Add more" value="0" formControlName="quantity" min="0">
+          <input matInput [type]="'number'" placeholder="Add more" value="0" formControlName="quantity" min="0" [max]=catalogData.inStock>
           <mat-error *ngIf="options.get('quantity')?.invalid">Please select more than 0</mat-error>
         </mat-form-field>
       </form>

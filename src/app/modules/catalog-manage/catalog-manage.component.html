@@ -1,0 +1,41 @@
+<section class="catalog-manage-wrapper">
+    <section class="catalog-manage-left">
+        <section class="catalog-manage-account"
+                 *ngFor="let account of accountData"
+                 [formGroup]="accountForm"
+        >
+            <div class="catalog-manage-account__data">
+                {{account.email}}
+            </div>
+
+            <div class="catalog-manage-account__data">
+                <input matInput placeholder="Password" [value]="account.password">
+            </div>
+
+            <div class="catalog-manage-account__button">
+                <button mat-button
+                        (click)="_deleteCustomerAccount(account)"
+                >
+                    {{'Delete'}}
+                </button>
+
+                <button mat-button
+                        (click)="_updatePassword(account)"
+                >
+                    {{'Update password'}}
+                </button>
+            </div>
+        </section>
+    </section>
+
+    <section class="catalog-manage-right">
+        <section class="catalog-manage-product"
+            *ngFor="let product of catalogData"
+        >
+            <div class="catalog-manage-product__name">
+                {{product.title}}
+            </div>
+            <input matInput [type]="'number'" placeholder="Quantity product" [value]="product.qnty" formControlName="quantity" min="0">
+        </section>
+    </section>
+</section>

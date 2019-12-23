@@ -1,8 +1,25 @@
 <div class="mai-catalog">
-  <div *ngFor="let item of catalogData" class="mai-catalog-item">
-    <mai-catalog-item
-            [catalogData]="item"
-            (priceChange)="onPriceChange($event, item)"
-    ></mai-catalog-item>
-  </div>
+    <div class="mai-catalog-content">
+        <div *ngFor="let item of catalogData" class="mai-catalog-item">
+            <mai-catalog-item
+                    [catalogData]="item"
+                    (priceChange)="onPriceChange($event, item)"
+            ></mai-catalog-item>
+        </div>
+    </div>
+
+    <div class="mai-catalog-footer">
+        <button mat-button
+                [disabled]="!fullPrice"
+                (click)="_confirmOrder()"
+        >
+            {{'Confirm order '}}
+        </button>
+    </div>
 </div>
+
+<catalog-overlay *ngIf="visiblePopUp"
+                 [confirmCatalogData]="newData"
+                 (closePopUpEmit)="visiblePopUp = false"
+>
+</catalog-overlay>

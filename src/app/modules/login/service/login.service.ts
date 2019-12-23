@@ -12,6 +12,7 @@ export class LoginService {
     }
 
     public login(login: string, password: string): Observable<AccountModel> {
+        console.log(login, password);
         return Observable.create((observer: Observer<AccountModel>) => {
                 return this.http.get<Array<AccountModel>>("employeesAccounts").subscribe((employeesAccounts) => {
                         this.accountModel = (employeesAccounts.find(employee =>
@@ -20,6 +21,7 @@ export class LoginService {
                             observer.next(this.accountModel);
                             observer.complete();
                             this.cookieService.set('type', this.accountModel.type);
+                            this.cookieService.set('id', this.accountModel.id);
                         }
                     },
                     error => {
@@ -27,5 +29,9 @@ export class LoginService {
                     });
             }
         );
+    }
+
+    public getCustomerId(): string {
+        return this.cookieService.get('id');
     }
 }

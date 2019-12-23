@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatDialogModule} from '@angular/material';
 import {MaiCatalogItemComponent} from './catalog-item/catalog-item.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MaiCatalogService} from './service/catalog.service';
 import {MaiCatalogComponent} from "./catalog.component";
+import { CatalogOverlayComponent } from './catalog-overlay/catalog-overlay.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {MaiCatalogComponent} from "./catalog.component";
     BrowserModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -21,7 +23,8 @@ import {MaiCatalogComponent} from "./catalog.component";
   ],
   declarations: [
     MaiCatalogComponent,
-    MaiCatalogItemComponent
+    MaiCatalogItemComponent,
+    CatalogOverlayComponent
   ],
   providers: [
     MaiCatalogService

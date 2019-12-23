@@ -23,6 +23,20 @@ export class MaiHttpService {
     return this.http.get<T>(this.buildUrl(url), options);
   }
 
+  public patch<T>(url: string, body: any | null, options?: {
+    headers?: HttpHeaders | { [header: string]: string | string[]; },
+    params?: HttpParams | { [param: string]: string | string[]; }
+  }): Observable<T> {
+    return this.http.patch<T>(this.buildUrl(url), body, options);
+  }
+
+  public delete <T>(url: string, options?: {
+    headers?: HttpHeaders | { [header: string]: string | string[]; },
+    params?: HttpParams | { [param: string]: string | string[]; }
+  }): Observable<T> {
+    return this.http.delete<T>(this.buildUrl(url), options);
+  }
+
   private buildUrl(url: string): string {
     return url && url.startsWith('http') ? url : this.baseUrl + url;
   }

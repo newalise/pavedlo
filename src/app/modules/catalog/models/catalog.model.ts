@@ -6,4 +6,11 @@ export interface MaiCatalogItemModel {
   price: number;
   qnty?: number;
   newPrice?: number;
+  inStock: number;
+  id: string;
+}
+
+export interface MaiCatalogChangeItemData {
+  id: string;
+  inStock: number;
 }

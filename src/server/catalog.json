@@ -1,9 +1,29 @@
 [
   {
+    "id": "1",
     "title": "French fries",
     "subtitle": "Crispy and tasty",
     "image": "https://www.seriouseats.com/2018/04/20180309-french-fries-vicky-wasik-15-1500x1125.jpg",
     "description": "French fries are prepared by first cutting the potato (peeled or unpeeled) into even strips, which are then wiped off or soaked in cold water to remove the surface starch, and thoroughly dried.",
-    "price": 3
+    "price": 3,
+    "inStock": 10
+  },
+  {
+    "id": "2",
+    "title": "Prague beer",
+    "subtitle": "Weizenbier",
+    "image": "https://cdn24.img.ria.ru/images/156073/43/1560734358_0:305:3099:2048_600x0_80_0_0_0ad97e51abdb6c5b732dc608d5254a1a.jpg",
+    "description": "Lite beer",
+    "price": 3,
+    "inStock": 5
+  },
+  {
+    "id": "3",
+    "title": "Burger",
+    "subtitle": "Crispy and tasty",
+    "image": "https://starlite.ru/upload/iblock/a6d/a6dcc6892b5f5948c50dddd3f1d7d13b.jpg",
+    "description": "Starlite Dinner",
+    "price": 3,
+    "inStock": 3
   }
 ]

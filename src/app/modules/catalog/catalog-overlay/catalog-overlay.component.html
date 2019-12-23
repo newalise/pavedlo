@@ -1,0 +1,40 @@
+<section class="catalog-overlay-wrapper">
+    <section class="catalog-overlay-header">
+        {{'Show order'}}
+    </section>
+
+    <section class="catalog-overlay-content">
+        <section class="catalog-overlay-item"
+                 *ngFor="let item of confirmCatalogData">
+            <div class="catalog-overlay-item__name">
+                {{item.title}}
+            </div>
+            <div class="catalog-overlay-item__price">
+                {{item.newPrice + '$'}}
+            </div>
+        </section>
+    </section>
+
+    <section class="catalog-overlay-price">
+        <section class="catalog-overlay-item">
+            <div class="catalog-overlay-item__name _bold">
+                {{'Total price'}}
+            </div>
+            <div class="catalog-overlay-item__price">
+                {{totalPrice + '$'}}
+            </div>
+        </section>
+    </section>
+    <section class="catalog-overlay-footer">
+        <button mat-button
+                (click)="_closePopup()"
+        >
+            {{'Close'}}
+        </button>
+        <button mat-button
+                (click)="_confirmOrder()"
+        >
+            {{'Order'}}
+        </button>
+    </section>
+</section>
