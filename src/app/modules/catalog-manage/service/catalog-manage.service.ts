@@ -57,4 +57,16 @@ export class CatalogManageService {
                 });
         });
     }
+
+    public updateQuantityProductById(productId: string, newQuantity: number): Observable<MaiCatalogItemModel> {
+      return Observable.create((observer: Observer<MaiCatalogItemModel>) => {
+        return this.http.patch<MaiCatalogItemModel>("catalog/" + productId, {inStock: newQuantity}).subscribe(data => {
+            observer.next(data);
+            observer.complete();
+          },
+          error => {
+            observer.error(error);
+          });
+      });
+    }
 }
